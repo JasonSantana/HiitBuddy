@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HiitBudy</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Great+Vibes&family=Lato:wght@100&family=Noto+Sans+Mono:wght@700&family=Noto+Serif+JP:wght@900&family=Playfair+Display&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="/dist/output.css" rel="stylesheet" />
+	</head>
+
+	<body class="bg-gradient-to-r from-orange-500 to-red-500">
+		<div class="numorph min-h-full flex flex-col p-4 content">
+			<div class="flex flex-row justify-center">
+				<h1 class="logo text-3xl text-white shadow-blue">HiitBuddy</h1>
+			</div>
+
+			<div
+				class="flex flex-col justify-center border-white rounded-lg text-center"
+			>
+				<div class="rounds">
+					<h1 class="flex justify-center text-1xl p-4">
+						Number of Rounds? (Seconds)
+					</h1>
+					<div class="flex justify-center">
+						<input
+							id="rounds"
+							class="text-center px-1 text-1xl rounded-full"
+							type="number"
+						/>
+					</div>
+				</div>
+				<div class="duration">
+					<h1 class="flex justify-center text-1xl p-4">
+						Length of Rounds? (Seconds)
+					</h1>
+					<div class="flex justify-center">
+						<input
+							id="roundLength"
+							class="text-1xl rounded-full"
+							type="number"
+						/>
+					</div>
+				</div>
+				<div class="rest">
+					<h1 class="flex justify-center text-1xl p-4">
+						Length of rest? (Seconds)
+					</h1>
+					<div class="flex justify-center">
+						<input
+							id="restlength"
+							class="flex justify-center text-1xl rounded-full"
+							type="number"
+						/>
+					</div>
+				</div>
+				<div class="flex justify-center mb-4">
+					<button
+						class="bg-white rounded-full p-1 shadow-yellow-300"
+						id="submit"
+						type="submit"
+					>
+						Enter
+					</button>
+				</div>
+			</div>
+
+			<div class="flex flex-col justify-center">
+				<div class="flex justify-center">
+					<p class="text-2xl justify-self-auto" id="round">
+						Rounds :
+						<span id="spins"> 00</span>
+					</p>
+				</div>
+				<div class="flex justify-center">
+					<p class="text-2xl" id="startTime">
+						Work: <span id="seconds"> 00</span>:<span id="milli">00</span>
+					</p>
+				</div>
+				<div class="flex justify-center">
+					<p class="text-2xl" id="rest">
+						Rest: <span class="text-white" id="breathSec"> 00</span>:<span
+							id="breathMilli"
+							>00</span
+						>
+					</p>
+				</div>
+
+				<div class="flex flex-row p-3 justify-between py-6">
+					<div>
+						<button
+							class="bg-white rounded-full p-1 shadow-yellow-300"
+							id="start"
+						>
+							Start
+						</button>
+					</div>
+					<div>
+						<button
+							class="bg-white rounded-full p-1 shadow-yellow-300"
+							id="stop"
+						>
+							Stop
+						</button>
+					</div>
+					<div>
+						<button
+							class="bg-white rounded-full p-1 shadow-yellow-300"
+							id="reset"
+						>
+							Reset
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./assets/js/script.js"></script>
+	</body>
+</html>
