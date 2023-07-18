@@ -14,8 +14,8 @@
 		<link href="/dist/output.css" rel="stylesheet" />
 	</head>
 
-	<body class="bg-gradient-to-r from-orange-500 to-red-500">
-		<div class="numorph min-h-full flex flex-col p-4 content">
+	<body class="h-48 bg-gradient-to-r from-orange-500 to-red-500">
+		<div class="numorph min-h-screen flex flex-col p-4 content">
 			<div class="flex flex-row justify-center">
 				<h1 class="logo text-3xl text-white shadow-blue">HiitBuddy</h1>
 			</div>
@@ -24,37 +24,37 @@
 				class="flex flex-col justify-center border-white rounded-lg text-center"
 			>
 				<div class="rounds">
-					<h1 class="flex justify-center text-1xl p-4">
+					<h1 class="flex justify-center text-2xl p-4">
 						Number of Rounds? (Seconds)
 					</h1>
 					<div class="flex justify-center">
 						<input
 							id="rounds"
-							class="text-center px-1 text-1xl rounded-full"
+							class="text-center px-1 text-2xl rounded-full"
 							type="number"
 						/>
 					</div>
 				</div>
 				<div class="duration">
-					<h1 class="flex justify-center text-1xl p-4">
+					<h1 class="flex justify-center text-2xl p-4">
 						Length of Rounds? (Seconds)
 					</h1>
 					<div class="flex justify-center">
 						<input
 							id="roundLength"
-							class="text-1xl rounded-full"
+							class="text-2xl rounded-full"
 							type="number"
 						/>
 					</div>
 				</div>
 				<div class="rest">
-					<h1 class="flex justify-center text-1xl p-4">
+					<h1 class="flex justify-center text-2xl p-4">
 						Length of rest? (Seconds)
 					</h1>
 					<div class="flex justify-center">
 						<input
 							id="restlength"
-							class="flex justify-center text-1xl rounded-full"
+							class="flex justify-center text-2xl rounded-full"
 							type="number"
 						/>
 					</div>
@@ -78,7 +78,7 @@
 					</p>
 				</div>
 				<div class="flex justify-center">
-					<p class="text-2xl" id="startTime">
+					<p class="py-4 text-2xl" id="startTime">
 						Work: <span id="seconds"> 00</span>:<span id="milli">00</span>
 					</p>
 				</div>
@@ -91,10 +91,10 @@
 					</p>
 				</div>
 
-				<div class="flex flex-row p-3 justify-between py-6">
+				<div class="flex flex-row justify-center">
 					<div>
 						<button
-							class="bg-white rounded-full p-1 shadow-yellow-300"
+							class="bg-white rounded-full p-1 shadow-black-300"
 							id="start"
 						>
 							Start
