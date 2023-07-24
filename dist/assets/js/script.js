@@ -15,6 +15,8 @@ window.onload = function () {
 	let interval;
 	let initialDuration;
 	let initialRest;
+	let collector = document.getElementById("hide");
+	let counter = document.getElementById("show");
 
 	// START, STOP AND RESET BUTTONS
 
@@ -48,6 +50,8 @@ window.onload = function () {
 		document.getElementById("rounds").value = 0;
 		document.getElementById("roundLength").value = 0;
 		document.getElementById("restlength").value = 0;
+		counter.classList.add("flex-col");
+		collector.classList.remove("hidden");
 	};
 
 	// SET TIMER FIELDS
@@ -62,6 +66,9 @@ window.onload = function () {
 		breathSec.innerHTML = setRest;
 		seconds.innerHTML = setDuration;
 		breathSec.innerHTML = setRest;
+		console.log("semilla");
+		counter.classList.remove("hidden");
+		collector.classList.add("hidden");
 	};
 
 	// START TIMER, GOVERN TIME DECREMENT

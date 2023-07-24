@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Bruno+Ace+SC&family=Concert+One&family=Electrolize&family=Great+Vibes&family=Lato:wght@100&family=Noto+Sans+Mono:wght@700&family=Noto+Serif+JP:wght@900&family=Oranienbaum&family=Playfair+Display&display=swap");
+
+.numorph {
+	border-radius: 65px;
+	background: #cc6c38;
+	box-shadow: 35px 35px 70px #a95a2e, -35px -35px 70px #ef7e42;
+}
+
+#title {
+	font-family: Bruno Ace Sc;
+}
