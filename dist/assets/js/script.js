@@ -66,9 +66,9 @@ window.onload = function () {
 		breathSec.innerHTML = setRest;
 		seconds.innerHTML = setDuration;
 		breathSec.innerHTML = setRest;
-		console.log("semilla");
 		counter.classList.remove("hidden");
 		collector.classList.add("hidden");
+		console.log("semillia");
 	};
 
 	// START TIMER, GOVERN TIME DECREMENT
