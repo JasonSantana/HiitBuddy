@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>HiitBudy</title>
+		<title>HiitFlame</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,71 +16,62 @@
 		<link href="dist/output.css" rel="stylesheet" />
 	</head>
 
-	<body class="bg-gradient-to-r from-orange-500 to-red-500 max-h-screen">
+	<body
+		class="bg-gradient-to-r from-orange-500 to-red-500 max-h-screen max-w-30"
+	>
 		<div class="numorph m-8 flex flex-col">
 			<div class="flex flex-row justify-center">
-				<h1 id="title" class="logo text-4xl text-white p-4 underline">
-					HiitBuddy
+				<h1
+					id="title"
+					class="logo text-4xl text-white p-4 underline drop-shadow-md"
+				>
+					HiitFlame
 				</h1>
 			</div>
 
 			<div
 				id="hide"
-				class="
-					flex flex-col
-					justify-center
-					border-4 border-white
-					rounded-lg
-					text-center
-					m-4
-					p-1
-					transition-all
-				"
+				class="flex flex-col justify-center border-4 border-white rounded-lg text-center m-4 p-1 transition-all max-h-screen max-w-96"
 			>
 				<div class="rounds">
-					<h1 class="flex justify-center text-center text-1xl p-3">
+					<h1 class="flex justify-center text-center text-2xl p-3">
 						Number of Rounds? (Seconds)
 					</h1>
 					<div class="flex justify-center py-4">
-						<input id="rounds" class="text-1xl rounded-full" type="number" />
+						<input
+							id="rounds"
+							class="text-2xl rounded-full text-center"
+							type="number"
+						/>
 					</div>
 				</div>
 				<div class="duration p-3">
-					<h1 class="flex justify-center text-1xl p-3">
+					<h1 class="flex justify-center text-2xl p-3">
 						Length of Rounds? (Seconds)
 					</h1>
 					<div class="flex justify-center">
 						<input
 							id="roundLength"
-							class="text-1xl rounded-full"
+							class="text-2xl rounded-full text-center"
 							type="number"
 						/>
 					</div>
 				</div>
 				<div class="rest p-5">
-					<h1 class="flex justify-center text-1xl p-3">
+					<h1 class="flex justify-center text-2xl p-3">
 						Length of rest? (Seconds)
 					</h1>
 					<div class="flex justify-center p-4">
 						<input
 							id="restlength"
-							class="flex justify-center text-1xl rounded-full"
+							class="flex justify-center text-2xl rounded-full text-center"
 							type="number"
 						/>
 					</div>
 				</div>
 				<div class="flex justify-center">
 					<button
-						class="
-							text-xl
-							bg-white
-							rounded-2xl
-							p-4
-							drop-shadow-2xl
-							hover:bg-slate-400 hover:text-white hover:drop-shadow-xl
-							transition-all
-							mb-4
-						"
+						class="text-xl bg-white rounded-2xl p-4 drop-shadow-2xl hover:bg-slate-400 hover:text-white hover:drop-shadow-xl transition-all mb-4"
 						id="submit"
 						type="submit"
 					>
@@ -126,44 +117,23 @@
 				<div class="flex flex-row justify-between p-4">
 					<div>
 						<button
-							class="
-								bg-white
-								rounded-2xl
-								p-4
-								shadow-2xl
-								hover:bg-slate-400 hover:text-white
-								transition-all
-							"
+							class="bg-white rounded-2xl p-4 shadow-2xl hover:bg-slate-400 hover:text-white transition-all"
 							id="start"
 						>
 							Start
 						</button>
 					</div>
-					<div class="shadow-xl">
+					<!-- <div class="shadow-xl">
 						<button
-							class="
-								bg-white
-								rounded-2xl
-								p-4
-								shadow-2xl
-								hover:bg-slate-400 hover:text-white
-								transition-all
-							"
+							class="bg-white rounded-2xl p-4 shadow-2xl hover:bg-slate-400 hover:text-white transition-all"
 							id="stop"
 						>
-							Stop
+							Pause
 						</button>
-					</div>
+					</div> -->
 					<div>
 						<button
-							class="
-								bg-white
-								rounded-2xl
-								p-4
-								shadow-2xl
-								hover:bg-slate-400 hover:text-white
-								transition-all
-							"
+							class="bg-white rounded-2xl p-4 shadow-2xl hover:bg-slate-400 hover:text-white transition-all"
 							id="reset"
 						>
 							Reset

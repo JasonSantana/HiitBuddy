@@ -3,13 +3,13 @@ window.onload = function () {
 	let breathSec = document.getElementById("breathSec");
 	let millisec = document.getElementById("milli");
 	let startButton = document.getElementById("start");
-	let stopButton = document.getElementById("stop");
+	// let stopButton = document.getElementById("stop");
 	let resetButton = document.getElementById("reset");
-	let changeSeconds = 00;
-	let changeMilliSec = 00;
-	let changeBreath = 00;
-	let changeRound = 00;
-	let changeBreathMilli = 00;
+	let changeSeconds = 0;
+	let changeMilliSec = 0;
+	let changeBreath = 0;
+	let changeRound = 0;
+	let changeBreathMilli = 0;
 	let spins = document.getElementById("spins");
 	let breathMilli = document.getElementById("breathMilli");
 	let interval;
@@ -17,24 +17,49 @@ window.onload = function () {
 	let initialRest;
 	let collector = document.getElementById("hide");
 	let counter = document.getElementById("show");
+	let isTimerRunning = false;
+	let savedTimerValues = null;
 
 	// START, STOP AND RESET BUTTONS
 
 	startButton.onclick = function start() {
-		clearInterval(interval);
-		interval = setInterval(startTimer, 10);
+		if (!isTimerRunning) {
+			clearInterval(interval);
+			interval = setInterval(startTimer, 10);
 
-		initialDuration = document.getElementById("roundLength").value;
-		initialRest = document.getElementById("restlength").value;
-		changeSeconds = initialDuration;
-		changeRound = document.getElementById("rounds").value;
-		spins.innerHTML = changeRound;
+			if (savedTimerValues) {
+				// If timer values are already saved, use them to resume
+				changeSeconds = savedTimerValues.seconds;
+				changeMilliSec = savedTimerValues.milliseconds;
+				changeBreathMilli = savedTimerValues.breathMilliseconds;
+				changeRound = savedTimerValues.rounds;
+				savedTimerValues = null; // Reset saved values after resuming
+			} else {
+				// Otherwise, start the timer with initial values
+				initialDuration = document.getElementById("roundLength").value;
+				initialRest = document.getElementById("restlength").value;
+				changeSeconds = initialDuration;
+				changeRound = document.getElementById("rounds").value;
+				spins.innerHTML = changeRound;
+			}
+			isTimerRunning = true;
+		} else {
+			// If the timer is already running, do nothing
+		}
 	};
 
-	stopButton.onclick = function () {
-		clearInterval(interval);
-		isTimerRunning = false;
-	};
+	// stopButton.onclick = function () {
+	// 	if (isTimerRunning) {
+	// 		// Store current timer values when stopping the timer
+	// 		savedTimerValues = {
+	// 			seconds: changeSeconds,
+	// 			milliseconds: changeMilliSec,
+	// 			breathMilliseconds: changeBreathMilli,
+	// 			rounds: changeRound,
+	// 		};
+	// 		isTimerRunning = false;
+	// 	}
+	// };
 
 	resetButton.onclick = function () {
 		clearInterval(interval);
@@ -43,15 +68,16 @@ window.onload = function () {
 		breathSec.innerHTML = "00";
 		breathMilli.innerHTML = "00";
 		spins.innerHTML = "00";
-		changeSeconds = 00;
-		changeMilliSec = 00;
-		changeBreathMilli = 00;
-		changeRound = 00;
+		changeSeconds = 0;
+		changeMilliSec = 0;
+		changeBreathMilli = 0;
+		changeRound = 0;
 		document.getElementById("rounds").value = 0;
 		document.getElementById("roundLength").value = 0;
 		document.getElementById("restlength").value = 0;
 		counter.classList.add("flex-col");
 		collector.classList.remove("hidden");
+		isTimerRunning = false;
 	};
 
 	// SET TIMER FIELDS
@@ -68,7 +94,6 @@ window.onload = function () {
 		breathSec.innerHTML = setRest;
 		counter.classList.remove("hidden");
 		collector.classList.add("hidden");
-		console.log("semillia");
 	};
 
 	// START TIMER, GOVERN TIME DECREMENT
@@ -77,9 +102,8 @@ window.onload = function () {
 		changeMilliSec--;
 		millisec.innerHTML = changeMilliSec;
 		seconds.innerHTML = changeSeconds;
-		// let breathDuration = document.getElementById('restlength').value;
 
-		if (changeMilliSec < 00) {
+		if (changeMilliSec < 0) {
 			changeSeconds--;
 			seconds.innerHTML = changeSeconds;
 			changeMilliSec = 99;
@@ -99,8 +123,8 @@ window.onload = function () {
 			clearInterval(interval);
 			seconds.innerHTML = "00";
 			millisec.innerHTML = "00";
-			changeSeconds = 00;
-			changeMilliSec = 00;
+			changeSeconds = 0;
+			changeMilliSec = 0;
 			document.getElementById("roundLength").value = "";
 			spins.innerHTML = changeRound;
 
@@ -115,10 +139,10 @@ window.onload = function () {
 		function resetTimers() {
 			changeSeconds = initialDuration;
 			changeBreath = initialRest;
-			changeMilliSec = 00;
+			changeMilliSec = 0;
 			changeBreath = initialRest;
 			console.log("initialRestSet");
-			changeBreathMilli = 00;
+			changeBreathMilli = 0;
 			seconds.innerHTML = changeSeconds;
 			breathSec.innerHTML = changeBreath;
 			document.getElementById("restlength").value = initialRest;
@@ -134,7 +158,7 @@ window.onload = function () {
 		breathMilli.innerHTML = changeBreathMilli;
 		breathSec.innerHTML = changeBreath;
 
-		if (changeBreathMilli < 00) {
+		if (changeBreathMilli < 0) {
 			changeBreath--;
 			changeBreathMilli = 99;
 			document.getElementById("restlength").value = changeBreath;
@@ -153,7 +177,7 @@ window.onload = function () {
 			breathSec.innerHTML = "00";
 			breathMilli.innerHTML = "00";
 			changeBreath = breathDuration;
-			changeBreathMilli = 00;
+			changeBreathMilli = 0;
 			document.getElementById("roundLength").value = "";
 			document.getElementById("restlength").value = "";
 			resetTimers();
@@ -164,10 +188,10 @@ window.onload = function () {
 		function resetTimers() {
 			changeSeconds = initialDuration;
 			changeBreath = initialRest;
-			changeMilliSec = 00;
+			changeMilliSec = 0;
 			changeBreath = initialRest;
 			console.log("initialRestSet");
-			changeBreathMilli = 00;
+			changeBreathMilli = 0;
 			seconds.innerHTML = changeSeconds;
 			breathSec.innerHTML = changeBreath;
 			document.getElementById("restlength").value = initialRest;
